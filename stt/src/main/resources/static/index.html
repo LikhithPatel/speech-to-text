@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Speech to Text</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎙️ Speech to Text</h1>
+    <p>Speak in Hindi, English, or both. Words appear in real time.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="controls">
+        <button id="micBtn" class="mic">Start Recording</button>
+        <span id="status" class="status">Idle</span>
+      </div>
+
+      <input id="titleInput" type="text" placeholder="Title (optional)" />
+      <textarea id="liveText" placeholder="Your transcription will appear here..." rows="6"></textarea>
+
+      <div class="actions">
+        <button id="saveBtn" class="primary">Save</button>
+        <button id="clearBtn">Clear</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>History</h2>
+      <div id="history" class="history"></div>
+    </section>
+  </main>
+
+  <dialog id="editDialog">
+    <form method="dialog">
+      <h3>Edit transcription</h3>
+      <input id="editTitle" type="text" placeholder="Title" />
+      <textarea id="editText" rows="6"></textarea>
+      <div class="actions">
+        <button value="cancel">Cancel</button>
+        <button value="save" class="primary">Update</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
